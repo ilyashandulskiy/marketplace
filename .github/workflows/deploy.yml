@@ -28,7 +28,7 @@ jobs:
           # you can copy private_key from your *.pem file, keep format
           ssh_private_key: ${{ secrets.PEM }}
           local_path: ./dist/
-          remote_path: ./marketplace/
+          remote_path: marketplace/
           sftp_only: true
           
       - name: SSH Command
