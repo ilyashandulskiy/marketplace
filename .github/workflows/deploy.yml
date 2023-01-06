@@ -30,11 +30,3 @@ jobs:
           local_path: ./dist/
           remote_path: marketplace/
           sftp_only: true
-          
-      - name: SSH Command
-        uses: D3rHase/ssh-command-action@v0.2.1
-        with:
-          HOST: 194-58-108-158.cloudvps.regruhosting.ru
-          USER: root
-          PRIVATE_SSH_KEY: ${{ secrets.PEM }}
-          COMMAND: pm2 start ./marketplace/dist/main.js --name Marketplace
