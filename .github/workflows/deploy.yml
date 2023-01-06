@@ -13,12 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
-      - name: install dependencies
-        run: npm i
-      
-      - name: build app
-        run: npm run build
 
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
@@ -30,3 +24,11 @@ jobs:
           local_path: ./
           remote_path: marketplace/
           sftp_only: true
+          
+      - name: SSH Command
+        uses: D3rHase/ssh-command-action@v0.2.1
+        with:
+          HOST: 194-58-108-158.cloudvps.regruhosting.ru
+          USER: root
+          PRIVATE_SSH_KEY: ${{ secrets.PEM }}
+          COMMAND: npm i && npm run build
