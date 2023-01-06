@@ -37,4 +37,4 @@ jobs:
           HOST: 194-58-108-158.cloudvps.regruhosting.ru
           USER: root
           PRIVATE_SSH_KEY: ${{ secrets.PEM }}
-          COMMAND: pm2 start ./marketplace/main.js --name Marketplace
+          COMMAND: pm2 start ./marketplace/dist/main.js --name Marketplace
