@@ -27,6 +27,6 @@ jobs:
           server: 194-58-108-158.cloudvps.regruhosting.ru
           # you can copy private_key from your *.pem file, keep format
           ssh_private_key: ${{ secrets.PEM }}
-          local_path: ./dist/
+          local_path: ./
           remote_path: marketplace/
           sftp_only: true
