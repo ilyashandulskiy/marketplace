@@ -1,7 +1,7 @@
 export class ProductDto {
-  id: number;
+  id: string;
   title: string;
   price: string;
   rating: number;
-  image_url?: string;
+  imageUrl?: string;
 }

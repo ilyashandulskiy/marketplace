@@ -1,14 +1,14 @@
 export class ProductDetailsDto {
-  id: number;
+  id: string;
   title: string;
   price: string;
   rating: number;
-  image_urls?: string[];
+  imageUrls?: string[];
   description: string;
-  weight_kg?: number;
+  weightKg?: number;
   amount: number;
-  size_mm?: { width: number, height: number, depth: number };
-  category_id: number;
-  store_id: number;
+  sizeMm?: { width: number; height: number; depth: number };
+  categoryId: string;
+  storeId: string;
   color?: string;
 }
