@@ -1,6 +1,7 @@
 import { productSize, productStatus } from './types';
 
-interface ProductEntityInterface {
+export class ProductEntity {
+  id: string;
   status: productStatus;
   price: string;
   rating: number;
@@ -16,22 +17,4 @@ interface ProductEntityInterface {
 
   createdAt: Date;
   updatedAt: Date;
-}
-
-export class ProductEntity implements ProductEntityInterface {
-  status;
-  price;
-  rating;
-  amount;
-  title;
-  description;
-  sizeMm;
-  categoryId;
-  color;
-  weightKg;
-  imagesUrl;
-  storeId;
-
-  createdAt;
-  updatedAt;
 }

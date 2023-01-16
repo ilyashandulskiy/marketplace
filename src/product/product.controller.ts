@@ -2,6 +2,7 @@ import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
 import { ProductDto } from './dto/product.dto';
 import { ProductDetailsDto } from './dto/productDetails.dto';
 import { UpdateProductDto } from './dto/updateProduct.dto';
+import { productService } from './product.service';
 
 @Controller('products')
 export class ProductController {
@@ -19,16 +20,7 @@ export class ProductController {
 
   @Get('/:id')
   getById(@Param() { id }: { id: string }): ProductDetailsDto {
-    return {
-      id,
-      title: 'title',
-      price: '10',
-      rating: 5,
-      description: 'description',
-      amount: 10,
-      categoryId: '1',
-      storeId: '1',
-    };
+    return productService.getById(id);
   }
 
   @Post()

@@ -3,7 +3,7 @@ export class ProductDetailsDto {
   title: string;
   price: string;
   rating: number;
-  imageUrls?: string[];
+  imagesUrl?: string[];
   description: string;
   weightKg?: number;
   amount: number;
