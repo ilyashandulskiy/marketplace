@@ -3,7 +3,7 @@ export class ProductDetailsDto {
   title: string;
   price: string;
   rating: number;
-  imagesUrl?: string[];
+  imageUrl: string;
   description: string;
   weightKg?: number;
   amount: number;
@@ -11,4 +11,5 @@ export class ProductDetailsDto {
   categoryId: string;
   storeId: string;
   color?: string;
+  canBuy: boolean;
 }

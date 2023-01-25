@@ -3,5 +3,5 @@ export class ProductDto {
   title: string;
   price: string;
   rating: number;
-  imageUrl?: string;
+  imageUrl: string;
 }

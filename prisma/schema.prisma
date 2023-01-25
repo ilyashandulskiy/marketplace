@@ -18,6 +18,7 @@ enum ProductStatus {
 
 model product {
   id String @id @default(uuid())
+  image_url String @default("")
   store_id String
   category_id String
   status ProductStatus @default(TEMPLATE)
@@ -28,7 +29,8 @@ model product {
   color String?
   weight_kg Float @default(0)
   amount_avaliable Int
+  hidden Boolean @default(false)
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  created_at DateTime? @default(now())
+  updated_at DateTime? @updatedAt
 }

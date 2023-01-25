@@ -1,13 +1,11 @@
-import { IsNumber, IsString, Max, Min } from 'class-validator';
+import { IsNumber, IsNumberString, IsString, Max, Min } from 'class-validator';
 
-export class UpdateProductDto {
+export class CreateProductDto {
   @IsString()
   title: string;
-  @IsNumber()
-  @Min(0)
-  @Max(Number.MAX_VALUE)
-  price: number;
-  imageUrls?: string[];
+  @IsNumberString()
+  price: string;
+  imageUrl: string;
   @IsString()
   description: string;
   @IsNumber()
@@ -18,8 +16,8 @@ export class UpdateProductDto {
   @Min(0)
   amount: number;
   sizeMm?: { width: number; height: number; depth: number };
-  @IsNumber()
+  @IsString()
   categoryId: string;
   @IsString()
-  color?: string;
+  color = '';
 }

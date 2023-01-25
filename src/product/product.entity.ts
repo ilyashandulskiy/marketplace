@@ -1,20 +1,23 @@
-import { productSize, productStatus } from './types';
+import { ProductStatus } from './types';
 
 export class ProductEntity {
   id: string;
-  status: productStatus;
-  price: string;
-  rating: number;
-  amount: number;
+  store_id: string;
+  image_url = '';
+  category_id: string;
+  status: ProductStatus = 'TEMPLATE';
+  price = '0';
   title: string;
   description: string;
-  sizeMm: productSize;
-  categoryId: string;
-  color: string;
-  weightKg: number;
-  imagesUrl: string[];
-  storeId: string;
+  rating: number;
+  color?: string;
+  weight_kg = 0;
+  amount_avaliable: number;
 
-  createdAt: Date;
-  updatedAt: Date;
+  created_at?: Date;
+  updated_at?: Date;
+
+  constructor(fields: Partial<ProductEntity>) {
+    Object.assign(this, fields);
+  }
 }

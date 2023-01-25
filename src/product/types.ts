@@ -1,2 +1,2 @@
-export type productStatus = 'template' | 'published' | 'moderation_failed';
+export type ProductStatus = 'TEMPLATE' | 'PUBLISHED' | 'MODERATION_FAILED';
 export type productSize = { width: number; height: number; depth: number };
