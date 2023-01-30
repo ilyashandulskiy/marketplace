@@ -3,7 +3,7 @@ import { ProductDetailsDto } from './dto/productDetails.dto';
 import { CreateProductDto } from './dto/createProduct.dto';
 import { Injectable } from '@nestjs/common';
 import { ProductDto } from './dto/product.dto';
-import { canBuyProduct } from '../utils/httpCodes';
+import { canBuyProduct } from './product.utils';
 
 @Injectable()
 export class ProductMapper {
