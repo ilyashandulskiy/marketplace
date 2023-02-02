@@ -22,6 +22,14 @@ export class ProductController {
     return this.productService.getList(search);
   }
 
+  @Get('/:category')
+  getListByCategory(
+    @Query('search') search,
+    @Param('category') category,
+  ): Promise<ProductDto[]> {
+    return this.productService.getListByCategory(category, search);
+  }
+
   @Get('/:id')
   getById(@Param() { id }: { id: string }): Promise<ProductDetailsDto> {
     return this.productService.getById(id);

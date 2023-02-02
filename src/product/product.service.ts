@@ -38,12 +38,23 @@ export class ProductService {
     );
   }
 
+  async getListByCategory(
+    category: string,
+    search?: string,
+  ): Promise<ProductDto[]> {
+    const products = await this.prisma.product.findMany({
+      where: { AND: { title: { contains: search }, category_id: category } },
+    });
+    return products.map((product) =>
+      this.productMapper.entityToProduct(product),
+    );
+  }
+
   async delete(id: string) {
     const product = await this.prisma.product.findFirst({ where: { id } });
     if (!product) throw new HttpException('Not found', httpCodes.notFound);
-    await this.prisma.product.update({
+    await this.prisma.product.delete({
       where: { id },
-      data: { ...product, hidden: true },
     });
     return this.productMapper.entityToDetailsDto(product);
   }

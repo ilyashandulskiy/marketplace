@@ -7,19 +7,20 @@ import { canBuyProduct } from './product.utils';
 
 @Injectable()
 export class ProductMapper {
-  entityToDetailsDto({
-    id,
-    title,
-    price,
-    rating,
-    description,
-    weight_kg,
-    image_url,
-    amount_avaliable,
-    category_id,
-    store_id,
-    color,
-  }: ProductEntity): ProductDetailsDto {
+  entityToDetailsDto(entity: ProductEntity): ProductDetailsDto {
+    const {
+      id,
+      title,
+      price,
+      rating,
+      description,
+      weight_kg,
+      image_url,
+      amount_avaliable,
+      category_id,
+      store_id,
+      color,
+    } = entity;
     return {
       id,
       title,
@@ -32,7 +33,7 @@ export class ProductMapper {
       amount: amount_avaliable,
       categoryId: category_id,
       storeId: store_id,
-      canBuy: canBuyProduct(amount_avaliable),
+      canBuy: canBuyProduct(entity),
     };
   }
 
