@@ -38,6 +38,7 @@ model product {
 model category {
   id String @id
   title String
+  image_url String @default("")
 
   created_at DateTime? @default(now())
   updated_at DateTime? @updatedAt

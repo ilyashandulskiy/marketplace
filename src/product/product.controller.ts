@@ -22,7 +22,7 @@ export class ProductController {
     return this.productService.getList(search);
   }
 
-  @Get('/:category')
+  @Get('/category/:category')
   getListByCategory(
     @Query('search') search,
     @Param('category') category,
